@@ -1,0 +1,423 @@
+
+html {
+  font-size: 10px;
+  background: none;
+}
+
+body {
+  position: relative;
+
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/*---------float------*/
+.clear-both:after {
+  display: block;
+  content: "";
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+/*-------- nav ---------*/
+
+.nav-left {
+  position: fixed;
+  top: 10rem;
+  left: 0;
+  width: 20vw;
+  z-index: 10;
+}
+
+.left-container {
+  position: absolute;
+  width: 100%;
+
+}
+
+.left-container:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 80vh;
+  z-index: -10;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.user-logo {
+  margin: 5rem auto;
+  width: 14rem;
+  height: 5rem;
+  line-height: 5rem;
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  background: rgba(36, 38, 39, .8);
+  border-radius: 1rem;
+}
+
+.nav-list {
+  position: absolute;
+  top: 15rem;
+  height: 40rem;
+  list-style: none;
+}
+
+.nav-item {
+  position: relative;
+  height: 6rem;
+  width: 13rem;
+  margin: 1rem auto;
+  padding-left: 2rem;
+  font-size: 1.5rem;
+  color: white;
+  line-height: 6rem;
+}
+
+.nav-item b {
+  margin-right: 1.5rem;
+}
+
+/*----nav:hover or click*/
+@keyframes blink {
+  from {
+    color: black;
+  }
+  to {
+    color: white;
+  }
+}
+
+@-webkit-keyframes fillColor {
+  0% {
+    color: #fff;
+  }
+  50% {
+    color: #fff;
+  }
+  100% {
+    color: #333;
+  }
+}
+
+@-webkit-keyframes fill {
+  0% {
+    width: 0%;
+    height: 1px;
+  }
+  50% {
+    width: 100%;
+    height: 1px;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    background: white;
+  }
+}
+
+.contact::before {
+  content: "";
+  position: absolute;
+  height: 0%;
+  width: 0%;
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+  z-index: -1;
+}
+
+.contact:hover {
+  animation: fillColor 0.7s forwards ease-in-out;
+}
+
+.contact:hover::before {
+  animation: fill 0.7s forwards ease-in-out;
+  opacity: 1;
+}
+
+.checked {
+  background: white;
+  color: #333;
+}
+
+.checked:hover {
+  animation: blink 0.3s;
+  -webkit-animation: blink 0.3s;
+}
+
+/*-------------  content -------*/
+.bg {
+  height: 80rem;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.bg-home {
+  .bg;
+  background-image: url("../image/001.jpg");
+}
+
+.bg-about {
+  .bg;
+  background-image: url("../image/002.jpg");
+}
+
+.bg-entries {
+  .bg;
+  background-image: url("../image/003.jpg");
+
+}
+
+.bg-work {
+  .bg;
+  background-image: url("../image/004.jpg");
+}
+
+.bg-contact {
+  .bg;
+  background-image: url("../image/005.jpg");
+}
+
+.section {
+  position: relative;
+  z-index: 2;
+  -webkit-transition: transform 1s ease-in-out;
+  width: 500vw;
+  height: 100vh;
+
+  .section-content {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+
+    .content-item {
+      width: 70vw;
+      height: 80vh;
+      position: absolute;
+      z-index: 10;
+      top: 10rem;
+      right: 0;
+      .contact-form {
+        position: absolute;
+        top: 5rem;
+        right: 5rem;
+        width: 30vw;
+        height: 45vh;
+        .row {
+          .col {
+            margin: 1rem auto;
+            input {
+              width: 100%;
+              height: 3rem;
+              padding-left: 1rem;
+              background: rgba(176, 176, 176, 0.5);
+              color: white;
+              border: none;
+            }
+            input::placeholder {
+              color: white;
+            }
+            textarea {
+              width: 100%;
+              height: 9rem;
+              padding-left: 1rem;
+              background: rgba(176, 176, 176, 0.5);
+              color: white;
+              border: none;
+            }
+            textarea::placeholder {
+              color: white;
+            }
+            button {
+              width: 100%;
+              height: 3rem;
+              text-align: center;
+              border: 0.2rem solid white;
+              background: rgba(255, 255, 255, 0);
+              color: white;
+              font-weight: bold;
+            }
+            button:hover {
+              background: rgba(255, 255, 255, 1);
+              color: rgba(33, 33, 33, 0.8);
+              font-weight: normal;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .login-form {
+        .form;
+      }
+      .form {
+        width: 15vw;
+        height: 30vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .row {
+          .col {
+            margin: 2rem auto;
+            width: 15vw;
+            input {
+              width: 100%;
+              height: 4rem;
+              border: none;
+              background: rgba(255, 255, 255, 0.8);
+              color: black;
+              font-weight: bold;
+            }
+            button {
+              width: 30%;
+              height: 3rem;
+              color: white;
+              border: 1px solid white;
+              font-weight: bold;
+              background: rgba(255, 255, 255, 0);
+              margin-right: 2rem;
+            }
+            button:hover {
+              cursor: pointer;
+              color: rgba(33, 33, 33, 1);
+              background: rgba(255, 255, 255, 1);
+            }
+          }
+        }
+      }
+      .register-form {
+        display: none;
+        .form;
+      }
+      .item-container {
+        height: 100%;
+        .left-p {
+          width: 50%;
+          text-align: center;
+          h3 {
+            color: white;
+            margin: 2rem auto;
+          }
+          p {
+            margin: 3rem auto;
+            font-size: 1.5rem;
+            color: white;
+          }
+        }
+        .right-img {
+          width: 50%;
+          height: 100%;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+      .news-list {
+        overflow: scroll;
+        height: 100%;
+        .news-item {
+          margin: 3rem auto;
+          .item-title {
+            margin: 1rem auto;
+            .title-left {
+              width: 15%;
+              color: white;
+              .date {
+                text-align: center;
+                font-size: 1.5rem;
+                line-height: 1.2;
+                text-decoration: underline;
+              }
+            }
+            .title-right {
+              width: 85%;
+              color: white;
+              .title-tag {
+                button {
+                  margin: auto 1rem;
+                  border: 0.1px solid white;
+                  border-radius: 0.5rem;
+                  background: rgba(255, 255, 255, 0);
+                  color: white;
+                }
+                button:hover {
+                  background: rgba(255, 255, 255, 0.9);
+                  color: black;
+                }
+              }
+              .title-short {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+              }
+            }
+          }
+          .item-slide {
+               .carousel-inner{
+                 .carousel-item{
+                   img{
+                     width: 100%;
+                   }
+                 }
+               }
+          }
+        }
+      }
+      .news-list::-webkit-scrollbar {
+        display: none;
+      }
+
+    }
+    .content-item:after {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 70vw;
+      height: 80vh;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -10;
+    }
+  }
+  .section-content:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    content: "";
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+}
+
+/*---------footer--------*/
+.copy-right {
+  position: fixed;
+  bottom: 2.5rem;
+  left: 50%;
+  text-align: center;
+  font-size: 1.5rem;
+  color: white;
+  z-index: 999;
+}
